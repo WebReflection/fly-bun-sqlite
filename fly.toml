@@ -1,0 +1,24 @@
+# fly.toml app configuration file generated for fly-bun-sqlite on 2024-02-14T14:39:33+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'fly-bun-sqlite'
+primary_region = 'ams'
+
+[build]
+
+[[mounts]]
+  source = 'litefs'
+  destination = '/var/lib/litefs'
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  size = 'shared-cpu-1x'

@@ -1,0 +1,19 @@
+{
+  "name": "fly-bun-sqlite",
+  "module": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "bun index.js",
+    "update:bun": "sed -i \"s/ARG BUN_VERSION=.*/ARG BUN_VERSION=$(bun --version)/\" Dockerfile"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "latest",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "latest"
+  },
+  "dependencies": {
+    "better-tags": "latest"
+  }
+}
